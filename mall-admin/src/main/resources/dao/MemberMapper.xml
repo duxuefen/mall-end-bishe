@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.macro.mall.dao.MemberMapper">
+    <insert id="addOne">
+        INSERT INTO member (bianhao,name,sex,age,phone,time)
+        VALUES
+        (#(bianHao,jdbcType=VARCHAR ),#(name,jdbcType=VARCHAR ),#(sex,jdbcType=VARCHAR ),#(age,jdbcType=INTEGER
+        ),#(phone,jdbcType=VARCHAR ),#(time,jdbcType=DATE ))
+    </insert>
+
+    <update id="updateByBianHao">
+        UPDATE member
+        set name=#(name,jdbcType=VARCHAR ),sex=#(sex,jdbcType=VARCHAR
+        ),age=#(age,jdbcType=INTEGER),phone=#(phone,jdbcType=VARCHAR ),time=#(time,jdbcType=DATE )
+        WHERE binahao=#(bianHao,jdbcType=VARCHAR )
+     </update>
+
+    <delete id="deleteByBianHao">
+        DELETE FROM member where bianhao=#(bianHao,jdbcType=VARCHAR )
+    </delete>
+
+    <select id="searchByPhone" resultType="com.macro.mall.dto.Member">
+        select * from member where phone=#(phone,jdbcType=VARCHAR )
+    </select>
+
+    <select id="getAll" resultType="com.macro.mall.dto.Member">
+        select * from member;
+    </select>
+</mapper>
