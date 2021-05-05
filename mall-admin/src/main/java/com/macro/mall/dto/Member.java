@@ -11,6 +11,7 @@ import java.util.Date;
 @Getter
 @Setter
 public class Member {
+    private int id;
     private String bianHao; //自动生成
     private String name;
     private String sex;

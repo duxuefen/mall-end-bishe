@@ -1,7 +1,7 @@
 package com.macro.mall.controller;
 
 
-import com.macro.mall.dto.CaiWu;
+import com.macro.mall.dto.Finance;
 import com.macro.mall.service.impl.CaiWuServiceImpl;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -24,7 +24,37 @@ public class CaiWuController {
     @ApiOperation(value = "新增财务记录")
     @RequestMapping(value = "/insert", method = RequestMethod.POST)
     @ResponseBody
-    public void insert(CaiWu caiwu){
+    public void insert(Finance caiwu){
         caiWuService.insert(caiwu);
     }
+
+    @ApiOperation(value = "删除财务记录")
+    @RequestMapping(value = "/deleteFinance", method = RequestMethod.POST)
+    @ResponseBody
+    public void deleteFinance(String number){
+        caiWuService.deleteFinance(number);
+    }
+
+    @ApiOperation(value = "修改财务记录")
+    @RequestMapping(value = "/updateFinance", method = RequestMethod.POST)
+    @ResponseBody
+    public void updateFinance(Finance finance){
+        caiWuService.updateFinance(finance);
+    }
+
+    @ApiOperation(value = "通过编号搜索")
+    @RequestMapping(value = "/searchFinance", method = RequestMethod.POST)
+    @ResponseBody
+    public void searchFinance(String number){
+        caiWuService.searchFinanceByBianHao(number);
+    }
+
+    @ApiOperation(value = "得到全部")
+    @RequestMapping(value = "/getAllFinance", method = RequestMethod.POST)
+    @ResponseBody
+    public void updateFinance(){
+        caiWuService.getAll();
+    }
+
+
 }

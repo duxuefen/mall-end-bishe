@@ -8,9 +8,9 @@ import java.util.List;
 
 @Service
 public interface MemberService {
-    void addOne(Member member);
-    void updateByBianHao(Member member);
-    void deleteByBianHao(String bianHao); //删除某一条的记录
+    Member addOne(Member member);
+    int updateById(Integer id,Member member);
+    int deleteById(Integer id); //删除某一条的记录
     Member searchByPhone(String phone);
-    List<Member> getAll();//查询全部的记录
+    List<Member> getAll(String keyword, Integer pageSize, Integer pageNum);//查询全部的记录
 }

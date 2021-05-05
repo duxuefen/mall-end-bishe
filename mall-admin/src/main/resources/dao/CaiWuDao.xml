@@ -3,10 +3,26 @@
 <mapper namespace="com.macro.mall.dao.CaiWuDao">
 
     <insert id="insert">
-        insert into cawiwu (time,shangping,qianshu,bianhao,nian,yue)
-        value
-        (#{time,jdbcType=TIMESTAMP},#{shangping,jdbcType=VARCHAR},#{qianshu,jdbcType=VARCHAR},#{bianhao,jdbcType=VARCHAR},#{nian,jdbcType=VARCHAR},#{yue,jdbcType=VARCHAR});
+          INSERT INTO finance ( number, salename, huohao, quantity, money, time, year, month )
+          VALUES
+	      (#{number,jdbcType=VARCHAR},#{saleName,jdbcType=VARCHAR},#{huohao,jdbcType=VARCHAR},#{quantity,jdbcType=INTEGER},#{money,jdbcType=DOUBLE},#{time,jdbcType=DATE},#{year,jdbcType=VARCHAR},#{month,jdbcType=VARCHAR})
     </insert>
 
+    <delete id="deleteFinance">
+         DELETE FROM finance WHERE number=#{number,jdbcType=VARCHAR}
+    </delete>
 
+    <update id="updateFinance">
+         UPDATE finance
+         SET salename=#{saleName,jdbcType=VARCHAR}, quantity=#{quantity,jdbcType=INTEGER},money=#{money,jdbcType=DOUBLE}
+        WHERE number=#{number,jdbcType=VARCHAR}
+    </update>
+
+    <select id="searchFinanceByBianHao" resultType="com.macro.mall.dto.Finance">
+          SELECT * FROM finance where number=#{number,jdbcType=VARCHAR}
+    </select>
+
+    <select id="getAll" resultType="com.macro.mall.dto.Finance">
+        SELECT * FROM finance
+    </select>
 </mapper>

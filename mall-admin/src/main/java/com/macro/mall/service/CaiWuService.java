@@ -1,9 +1,9 @@
 package com.macro.mall.service;
 
-import com.macro.mall.dao.CaiWuDao;
-import com.macro.mall.dto.CaiWu;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.macro.mall.dto.Finance;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * @ClassName dxf
@@ -14,5 +14,14 @@ import org.springframework.stereotype.Service;
 @Service
 public interface CaiWuService {
 
-    void insert(CaiWu caiWu);
+    void insert(Finance finance);
+
+    void deleteFinance(String number);
+
+    void updateFinance(Finance finance);
+
+    Finance searchFinanceByBianHao(String bianHao);
+
+    List<Finance> getAll();
+
 }
