@@ -14,14 +14,14 @@ import java.util.List;
 @Service
 public interface CaiWuService {
 
-    void insert(Finance finance);
+    Finance insert(Finance finance);
 
-    void deleteFinance(String number);
+    int  updateFinance(String number,Finance finance);
 
-    void updateFinance(Finance finance);
+    int  deleteFinance(Integer id);
 
     Finance searchFinanceByBianHao(String bianHao);
 
-    List<Finance> getAll();
+    List<Finance> getAll(String keyword, Integer pageSize, Integer pageNum);
 
 }

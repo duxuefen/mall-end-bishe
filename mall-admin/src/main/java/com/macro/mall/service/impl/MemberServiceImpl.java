@@ -20,14 +20,15 @@ public class MemberServiceImpl implements MemberService {
     @Override
     public Member addOne(Member member) {
         memberMapper.addOne(member);
+
         return member;
     }
 
     @Override
     public int updateById(Integer id,Member member) {
         member.setId(id);
-        memberMapper.updateById(member);
-        return 1;
+      int count = memberMapper.updateById(member);
+        return count;
 
     }
 

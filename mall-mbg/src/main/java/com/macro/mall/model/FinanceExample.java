@@ -4,15 +4,15 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class FinanceMember {
+public class FinanceExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public FinanceMember() {
-        this.oredCriteria = oredCriteria;
+    public FinanceExample() {
+        this.oredCriteria = new ArrayList<>();
     }
 
 
@@ -195,7 +195,7 @@ public class FinanceMember {
         }
 
         public Criteria andUsernameLike(String value) {
-            addCriterion("username like", value, "username");
+            addCriterion("number like", value, "number");
             return (Criteria) this;
         }
 

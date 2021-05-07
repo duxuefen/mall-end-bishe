@@ -12,7 +12,7 @@
         <result column="time" jdbcType="TIMESTAMP" property="time" />
     </resultMap>
     <insert id="addOne">
-        <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+        <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
             SELECT LAST_INSERT_ID()
         </selectKey>
         INSERT INTO member (bianhao,name,sex,age,phone,time)
@@ -29,7 +29,7 @@
      </update>
 
     <delete id="deleteById">
-        DELETE FROM member where bianhao=#{id,jdbcType=INTEGER }
+        DELETE FROM member where id=#{id,jdbcType=INTEGER }
     </delete>
 
     <select id="searchByPhone" resultType="com.macro.mall.dto.Member">

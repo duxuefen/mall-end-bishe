@@ -1,6 +1,7 @@
 package com.macro.mall.dao;
 
 import com.macro.mall.dto.Finance;
+import com.macro.mall.model.FinanceExample;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
@@ -19,11 +20,11 @@ public interface CaiWuDao {
 
    int insert(Finance finance);
 
-   void deleteFinance(@Param("number") String number);
+   int updateFinance(Finance finance);
 
-   void updateFinance(Finance finance);
+   int  deleteFinance(@Param("id") Integer id);
 
    Finance searchFinanceByBianHao(String bianHao);
 
-   List<Finance>  getAll();
+   List<Finance>  getAll(FinanceExample financeExample);
 }

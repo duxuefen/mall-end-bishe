@@ -42,10 +42,10 @@ public class MemberController {
     }
 
     @ApiOperation(value = "根据编号进行删除")
-    @RequestMapping(value = "/deleteById", method = RequestMethod.POST)
+    @RequestMapping(value = "/deleteById/{id2}", method = RequestMethod.POST)
     @ResponseBody
-    public CommonResult deleteById(Integer id){
-        int count=memberService.deleteById(id);
+    public CommonResult deleteById(@PathVariable Integer id2){
+        int count=memberService.deleteById(id2);
         if (count > 0) {
             return CommonResult.success(count);
         }

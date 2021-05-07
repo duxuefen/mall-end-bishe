@@ -18,6 +18,7 @@ import java.util.Date;
 @Setter
 public class Finance {
 
+    private Integer id;
     private String number;
     private String saleName;
     private String huohao;
