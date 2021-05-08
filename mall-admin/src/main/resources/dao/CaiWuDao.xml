@@ -20,7 +20,7 @@
         </selectKey>
           INSERT INTO finance ( number, salename, huohao, quantity, money, time, year, month )
           VALUES
-	      (#{number,jdbcType=VARCHAR},#{saleName,jdbcType=VARCHAR},#{huohao,jdbcType=VARCHAR},#{quantity,jdbcType=INTEGER},#{money,jdbcType=DOUBLE},#{time,jdbcType=DATE},#{year,jdbcType=VARCHAR},#{month,jdbcType=VARCHAR})
+	      (#{number,jdbcType=VARCHAR},#{saleName,jdbcType=VARCHAR},#{huohao,jdbcType=VARCHAR},#{quantity,jdbcType=INTEGER},#{money,jdbcType=DOUBLE},#{time,jdbcType=TIMESTAMP},#{year,jdbcType=VARCHAR},#{month,jdbcType=VARCHAR})
     </insert>
 
     <delete id="deleteFinance">
